@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.navigation.Navigation;
 
@@ -23,6 +24,14 @@ public class SecondFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Getting data from the other fragment and show a toast of its message
+        Bundle arguments = getArguments();
+        String data = arguments.getString("KEY");
+        Toast.makeText(getContext(), data, Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

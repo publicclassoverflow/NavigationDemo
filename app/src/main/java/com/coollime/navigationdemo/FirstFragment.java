@@ -39,8 +39,12 @@ public class FirstFragment extends Fragment {
         btnFirstSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Send some data to the second fragment
+                Bundle bundle = new Bundle();
+                bundle.putString("KEY", "Came from the First Fragment");
                 // The only key step to navigate between specified destinations
-                Navigation.findNavController(v).navigate(R.id.action_firstFragment_to_secondFragment);
+                Navigation.findNavController(v)
+                          .navigate(R.id.action_firstFragment_to_secondFragment, bundle);
             }
         });
     }
