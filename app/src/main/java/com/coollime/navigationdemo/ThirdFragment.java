@@ -40,18 +40,20 @@ public class ThirdFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_third, container, false);
     }
 
-    /** Trigger and handle navigation from the third fragment back to the second one */
+    /** Trigger and handle navigation from the third fragment back to the first one */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // 3rd -> 2nd back button
-        Button btnThirdSecond = view.findViewById(R.id.btn_third_second);
-        btnThirdSecond.setOnClickListener(new View.OnClickListener(){
+        Button btnThirdFirst = view.findViewById(R.id.btn_third_first);
+        btnThirdFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Use the native navigateUp() method to go back to the previous fragment
-                // on the back stack
-                Navigation.findNavController(v).navigateUp();
+                // Use the popBackStack() method with the specified destination id instead
+                // because navigateUp() only brings it back to the second fragments which is
+                // previously pushed onto the back stack
+//                Navigation.findNavController(v).navigateUp();
+                Navigation.findNavController(v).popBackStack(R.id.firstFragment, false);
             }
         });
     }

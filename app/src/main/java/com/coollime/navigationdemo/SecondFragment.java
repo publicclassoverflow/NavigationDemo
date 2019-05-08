@@ -53,6 +53,7 @@ public class SecondFragment extends Fragment {
                 // Send some data to the second fragment
                 Bundle bundle = new Bundle();
                 bundle.putString("KEY", "Came from the Second Fragment");
+                // TODO(MZ): Try the type-safe (generated SecondFragmentArgs) data communications
                 // The only key step to navigate between specified destinations
                 Navigation.findNavController(v)
                         .navigate(R.id.action_secondFragment_to_thirdFragment, bundle);
@@ -61,11 +62,13 @@ public class SecondFragment extends Fragment {
 
         // 2nd -> 1st back button
         Button btnSecondFirst = view.findViewById(R.id.btn_second_first);
-        btnSecondFirst.setOnClickListener(new View.OnClickListener(){
+        btnSecondFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Use the native navigateUp() method to go back to the previous fragment
                 // on the back stack
+                // The popBackStack() of NavController throws IllegalArgumentException when
+                // the back stack is empty, but navigateUp() wouldn't. It just exits the program.
                 Navigation.findNavController(v).navigateUp();
             }
         });

@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/firstFragment" >
+    app:startDestination="@id/firstFragment">
 
     <fragment
         android:id="@+id/firstFragment"
         android:name="com.coollime.navigationdemo.FirstFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" >
+        tools:layout="@layout/fragment_first">
 
         <action
             android:id="@+id/action_firstFragment_to_secondFragment"
@@ -25,7 +25,7 @@
         android:id="@+id/secondFragment"
         android:name="com.coollime.navigationdemo.SecondFragment"
         android:label="fragment_second"
-        tools:layout="@layout/fragment_second" >
+        tools:layout="@layout/fragment_second">
 
         <action
             android:id="@+id/action_secondFragment_to_thirdFragment"
@@ -47,6 +47,8 @@
         android:id="@+id/thirdFragment"
         android:name="com.coollime.navigationdemo.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third">
+
+    </fragment>
 
 </navigation>
