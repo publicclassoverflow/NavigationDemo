@@ -14,12 +14,31 @@
         android:text="@string/fragment_text_second"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <Button
-        android:id="@+id/btn_second_first"
-        android:textAllCaps="false"
-        android:layout_gravity="center"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_second_first" />
+        android:layout_gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        android:id="@+id/btn_group_second" >
+
+        <Button
+            android:id="@+id/btn_second_third"
+            style="@android:style/Widget.Material.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_second_third"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_second_first"
+            style="@android:style/Widget.Material.Light.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_second_first"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
 
 </FrameLayout>

@@ -17,17 +17,17 @@ import androidx.navigation.Navigation;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SecondFragment extends Fragment {
+public class ThirdFragment extends Fragment {
 
 
-    public SecondFragment() {
+    public ThirdFragment() {
         // Required empty public constructor
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Getting data from the other fragment and show a toast of its message
+        // Getting data from the second fragment and show a toast of its message
         Bundle arguments = getArguments();
         String data = arguments.getString("KEY");
         Toast.makeText(getContext(), data, Toast.LENGTH_SHORT).show();
@@ -37,31 +37,16 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        return inflater.inflate(R.layout.fragment_third, container, false);
     }
 
-    /** Trigger and handle navigation from the second fragment back to the first */
+    /** Trigger and handle navigation from the third fragment back to the second one */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        // 2nd -> 3rd button
-        Button btnSecondThird = view.findViewById(R.id.btn_second_third);
-        btnSecondThird.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Send some data to the second fragment
-                Bundle bundle = new Bundle();
-                bundle.putString("KEY", "Came from the Second Fragment");
-                // The only key step to navigate between specified destinations
-                Navigation.findNavController(v)
-                        .navigate(R.id.action_secondFragment_to_thirdFragment, bundle);
-            }
-        });
-
-        // 2nd -> 1st back button
-        Button btnSecondFirst = view.findViewById(R.id.btn_second_first);
-        btnSecondFirst.setOnClickListener(new View.OnClickListener(){
+        // 3rd -> 2nd back button
+        Button btnThirdSecond = view.findViewById(R.id.btn_third_second);
+        btnThirdSecond.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 // Use the native navigateUp() method to go back to the previous fragment
@@ -70,5 +55,4 @@ public class SecondFragment extends Fragment {
             }
         });
     }
-
 }
