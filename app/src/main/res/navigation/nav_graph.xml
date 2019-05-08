@@ -19,11 +19,6 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
-        <argument android:name="intData" app:argType="integer" />
-        <argument android:name="stringData" app:argType="string" />
-        <argument android:name="booleanData" app:argType="boolean" />
-        <argument android:name="floatData" app:argType="float" />
-
     </fragment>
 
     <fragment
@@ -39,6 +34,12 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <!-- Passing data from the 2nd to the 3rd fragment -->
+        <argument android:name="intData" app:argType="integer" />
+        <argument android:name="stringData" app:argType="string" />
+        <argument android:name="booleanData" app:argType="boolean" />
+        <argument android:name="floatData" app:argType="float" />
 
     </fragment>
 
